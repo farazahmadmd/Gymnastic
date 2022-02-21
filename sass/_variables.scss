@@ -1,0 +1,69 @@
+html{
+    --color-primary: hsl(87, 98%, 34%);
+    --color-primary-m: hsla(87, 100%, 45%, 0.55);
+
+    --color-secondary: hsl(247, 99%, 72%);
+    --color-secondary-m: hsla(274, 99%, 72%, 0.6);
+ 
+    --color-tertiary: hsl(185, 36%, 47%);
+    --color-tertiary-m: rgba(38, 52, 62, 0.65);
+
+    --color-quanternary: rgb(255, 235, 153); 
+    --color-quanternary-m: rgba(192, 162, 43, 0.65);
+
+    --color-quinary:white;
+    --color-quinary-m:rgba(255, 255, 255, 0.5);
+}
+
+html[data-theme="dark"]{
+    --color-primary: rgb(36, 38, 43);
+    --color-primary-m: rgba(36, 38, 43, 0.65);
+
+    --color-secondary: rgb(124, 185, 8);
+    --color-secondary-m: rgba(123, 185, 8, 0.5);
+
+    --color-tertiary: rgb(38, 52, 65);
+    --color-tertiary-m: hsla(183, 34%, 38%, 0.65);
+
+    --color-quanternary: hsl(220, 10%, 28%);
+    --color-quanternary-m: hsla(220, 10%, 28%, 0.65);
+
+    --color-quinary:white;
+    --color-quinary-m: rgba(255, 255, 255, .5);
+}
+
+$font-weights: ( 
+    "font-weight-thin":100,
+    "font-weight-light":300,
+    "font-weight-regular":400,
+    "font-weight-medium":500,
+    "font-weight-bold":700,
+    "font-weight-black":900,     
+    );
+
+    @function font-weight($font-weight-style) {
+        @return map-get($font-weights, $font-weight-style);
+    }
+
+    $font-sizes: (
+        "font-size-small" :calc(1.2rem + 0.5vw),
+        "font-size-regular" :calc(1.5rem + 1vw),
+        "font-size-medium" :calc(1.5rem + 2vw),    
+        "font-size-large" :calc(1.5rem + 5vw),
+        "font-size-xlarge" :calc(2.5rem + 5vw),
+        );
+
+        @function font-size($font-size-style) {
+            @return map-get($font-sizes, $font-size-style);
+        }
+
+        $break-points: (
+            "break-point-small" :400px,
+            "break-point-medium" :600px,
+            "break-point-tablet" :800px,
+            "break-point-desktop" :1300px,
+        );
+
+        @function break-point($break-point-limit) {
+            @return map-get($break-points, $break-point-limit);
+        }

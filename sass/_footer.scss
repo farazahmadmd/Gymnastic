@@ -1,0 +1,42 @@
+.footer {
+    grid-column: container-start / container-end;
+    background-image: linear-gradient(var(--color-tertiary-m), var(--color-tertiary-m)),
+        url("../img/footer/footer-bg.jpg");
+    @extend %bg;
+    @extend %sec-padding;
+    display: grid;
+    grid-template-rows: repeat(3, max-content);
+    grid-row-gap: 8vh;
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 25rem);
+        place-content: center;
+        grid-gap: 10rem 4vw;
+        &--section {
+            display: grid;
+            grid-row-gap: 1.5rem;
+            &__title {
+                @extend %sec-h3;
+            }
+            &__link:link,
+            &__link:visited {
+                display: block;
+                letter-spacing: initial;
+            }
+            &__para {
+                color: var(--color-quinary);
+                font-weight: font-weight(font-weight-light);
+                font-size: font-size(font-size-small);
+            }
+        }
+        &--section:first-child,
+        &--section:nth-child(2),
+        &--section:nth-child(3){
+            border-right: .1rem solid var(--color-quinary);
+        }
+        &--section:nth-child(3){
+            padding-right: 4vw;
+            input[type="email"]
+        }
+    }
+}

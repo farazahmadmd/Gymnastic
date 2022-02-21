@@ -1,0 +1,102 @@
+@mixin media-desktop {
+    @media screen and (min-width: break-point(break-point-desktop)) {
+        @content;
+    }
+}
+
+@mixin media-tablet {
+    @media screen and (max-width: break-point(break-point-tablet)) {
+        @content;
+    }
+}
+
+@mixin media-medium {
+    @media screen and (max-width: break-point(break-point-medium)) {
+        @content;
+    }
+}
+@mixin media-small {
+    @media screen and (max-width: break-point(break-point-small)) {
+        @content;
+    }
+}
+
+::selection {
+    background-color: var(--color-primary);
+}
+
+@import "./reset";
+@import "./variables";
+@import "./utilities";
+@import "./header";
+@import "./showcase";
+@import "./motto";
+@import "./features";
+@import "./trainer";
+@import "./testimonials";
+@import "./clients";
+@import "./register";
+@import "./footer";
+
+html.transition,
+html.transition *,
+html.transition * ::before,
+html.transition * ::after {
+    transition: all 0.5s !important;
+    transition-delay: 0 !important;
+}
+
+%bg {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+%sec-padding {
+    padding: 6vh 4vw;
+}
+%sec-heading {
+    font-size: font-size(font-size-medium);
+    font-weight: font-weight(font-weight-light);
+    letter-spacing: 0.2rem;
+    color: var(--color-quinary);
+}
+
+%sec-para {
+    font-size: font-size(font-size-small);
+    font-family: "Balsamiq Sans", cursive;
+    letter-spacing: 0.2rem;
+    color: var(--color-quinary);
+}
+%sec-h3 {
+    font-size: font-size(font-size-small);
+    color: var(--color-quinary);
+}
+%sec-h4 {
+    color: var(--color-quinary);
+}
+
+.scroll {
+    position: fixed;
+    bottom: 70rem;
+    right: 4rem;
+    height: 4rem;
+    width: 4rem;
+    background-image: url("../img/scroll/scroll.svg");
+    background-repeat: no-repeat;
+    background-color: var(--color-secondary-m);
+    background-size: contain;
+    background-position: center;
+    padding: 1rem;
+    border-radius: 50%;
+    z-index: 30;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+}
+.scroll.active {
+    visibility: visible;
+    opacity: 1;
+    bottom: 4rem;
+}
